@@ -39,4 +39,4 @@ select * from voters as v join (select vs.voter_id,count(vs.id) as votes_count f
 5.
 select vs.voter_id, count(vs.politician_id) as votes_count from votes as vs group by voter_id order by votes_count desc;
 
-select v.first_name,cm.name from voters as v join congress_members as cm join votes as vs join (select vs.voter_id, count(vs.politician_id) as votes_count from votes as vs group by voter_id order by votes_count asc) as cheater on v.id = vs.voter_id and vs.politician_id = cm.id and vs.voter_id = cheater.voter_id where cheater.votes_count > 2;
+select v.first_name,cm.name from voters as v join congress_members as cm join votes as vs join (select vs.voter_id, count(vs.politician_id) as votes_count from votes as vs group by voter_id order by votes_count asc) as cheater on v.id = vs.voter_id and vs.politician_id = cm.id and vs.voter_id = cheater.voter_id where cheater.votes_count > 1;

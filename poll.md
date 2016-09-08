@@ -1,0 +1,1 @@
+..lihat di poll.sql

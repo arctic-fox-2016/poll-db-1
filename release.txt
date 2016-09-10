@@ -1,0 +1,4 @@
+//release 1
+// cara cek jumlah politician_id 524 dari tabel voters
+select count (*) from votes where politician_id ='524';
+//isinya 22
